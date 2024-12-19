@@ -1,6 +1,6 @@
 local ls = require("readfile")
 
-local Lines = ls.readFileLines("test1.txt")
+local Lines = ls.readFileLines("test.txt")
 
 local function split(inputstr, sep)
   if sep == nil then
@@ -45,22 +45,16 @@ local function calcSign(t)
 end
 
 local function isValid(t, sign)
-  print("===============================ZIOBRO KURWO JEBANA =============================")
-  print(dump(t))
-  print("sign " .. sign)
   for i, v in ipairs(t) do
     local nextCounter = i + 1
     if t[nextCounter] == nil then
       break
     end
     local sum = sign * (t[nextCounter] - v)
-    print("sum: " .. sum .. " = " .. t[nextCounter] .. " - " .. v)
     if sum > 3 or sum < 1 then
-      print("not valid")
       return false
     end
   end
-  print("is valid")
   return true
 end
 
