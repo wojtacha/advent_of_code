@@ -82,7 +82,6 @@ function M:expects(char)
 end
 
 function M:done()
-  print("dodaje: " .. self.lhs .. " i " .. self.rhs)
   return self.lhs * self.rhs
 end
 
