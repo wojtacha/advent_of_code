@@ -1,0 +1,2 @@
+mul(12,34), mul(5,6]mul(7,,8)!mul[3,3)mUl(4,9) MUL(2,3)mul (6,7),mul(8,2)mul( ,5)mul(123,456)mul(7 8,9)xmu1(11,12)@mul(3,4)@mul(4*5)[do_mul(10,10)]mul(15,1)%mul(21,3) mul (3 ,4)
+

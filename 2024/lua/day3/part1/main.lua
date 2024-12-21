@@ -4,7 +4,7 @@ local multices = require("multices")
 local reader = filereader:new("test.txt")
 
 local underconstruction = nil
-local tabwithmultiplexes = {}
+local numberstable = {}
 
 local function summary(t)
   local sum = 0
@@ -15,7 +15,7 @@ local function summary(t)
   return sum
 end
 
-local dupa = function(char)
+local memoryreader = function(char)
   local state = ""
   if not underconstruction then
     if char == "m" then
@@ -36,10 +36,10 @@ local dupa = function(char)
       value = underconstruction:done()
       underconstruction = nil
     end
-    table.insert(tabwithmultiplexes, value)
+    table.insert(numberstable, value)
   end
 end
 
-reader:read(dupa)
+reader:read(memoryreader)
 
-print(summary(tabwithmultiplexes))
+print(summary(numberstable))

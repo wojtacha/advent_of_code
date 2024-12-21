@@ -21,21 +21,6 @@ local function shallow_copy(t)
   return t2
 end
 
-local function dump(o)
-  if type(o) == 'table' then
-    local s = '{ '
-    for i, v in ipairs(o) do     -- Iterate sequentially over the table
-      if type(v) == 'table' then
-        s = s .. dump(v) .. ', ' -- Recursively handle nested tables
-      else
-        s = s .. tostring(v) .. ', '
-      end
-    end
-    return s:sub(1, -3) .. ' }' -- Remove the trailing comma and space
-  else
-    return tostring(o)
-  end
-end
 
 local function calcSign(t)
   if t[1] < t[2] then
@@ -75,7 +60,6 @@ local function isSafe(t)
 end
 
 local counter = 0
--- kurwa no tak
 for _, v in pairs(Lines) do
   local t = split(v)
   local tab = isSafe(t)
